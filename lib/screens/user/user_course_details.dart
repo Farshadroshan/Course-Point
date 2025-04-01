@@ -62,7 +62,7 @@ void initState() {
         });
     }
   } else {
-    log("Video path is null or empty");
+    log("Video path is null or empty ");
   }
 }
 
