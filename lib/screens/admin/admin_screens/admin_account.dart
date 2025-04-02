@@ -4,6 +4,7 @@ import 'package:coursepoint/Screens/user/user_login.dart';
 import 'package:coursepoint/database/model/admin_model.dart';
 import 'package:coursepoint/screens/admin/admin_screens/admin_user_enrollments.dart';
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:coursepoint/widget/menuItems.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -60,16 +61,18 @@ class _AdminAccountScreenState extends State<AdminAccountScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: const Color(0xFF191919),
-      appBar: AppBar(
-        // iconTheme: const IconThemeData(color: Colors.grey),
-        backgroundColor:  appBarColor,
-        centerTitle: true,
-        title: const Text(
-          'Account',
-          style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
-        ),
-      ),
+      // appBar: AppBar(
+      //   // iconTheme: const IconThemeData(color: Colors.grey),
+      //   backgroundColor:  appBarColor,
+      //   centerTitle: true,
+      //   title: const Text(
+      //     'Account',
+      //     style: TextStyle(
+      //         color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
+      //   ),
+      // ),
+            appBar: CustomAppBar(title: 'Account', backgroundColor: appBarColor, titleColor: appColorblack),
+
       body: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(

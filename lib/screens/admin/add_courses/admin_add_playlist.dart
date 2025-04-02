@@ -6,6 +6,7 @@ import 'package:coursepoint/DataBase/Functions/course_add_functions.dart';
 import 'package:coursepoint/DataBase/Model/playlist_model.dart';
 import 'package:coursepoint/DataBase/Model/subcourse_model.dart';
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -42,15 +43,17 @@ class _AdminAddPlaylistScreenState extends State<AdminAddPlaylistScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: appBarColor,
-        centerTitle: true,
-        title: Text(
-          'Add Playlist',
-          style: TextStyle(
-              color: appColorblack, fontWeight: FontWeight.bold, fontSize: 22),
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: appBarColor,
+      //   centerTitle: true,
+      //   title: Text(
+      //     'Add Playlist',
+      //     style: TextStyle(
+      //         color: appColorblack, fontWeight: FontWeight.bold, fontSize: 22),
+      //   ),
+      // ),
+            appBar: CustomAppBar(title: 'Add Playlist', backgroundColor: appBarColor, titleColor: appColorblack),
+
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         child: Column(

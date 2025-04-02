@@ -1,5 +1,6 @@
 import 'package:coursepoint/screens/user/privacy_policy.dart';
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class TermsAndConditionsPage extends StatelessWidget {
@@ -9,11 +10,12 @@ class TermsAndConditionsPage extends StatelessWidget {
  Widget build(BuildContext context) {
     return  
     Scaffold(
-      appBar: AppBar(
-            title: Text('Terms and Conditions',style: TextStyle(fontWeight: FontWeight.bold),),
-            centerTitle: true,
-            backgroundColor: appBarColor,
-        ),
+      // appBar: AppBar(
+      //       title: Text('Terms and Conditions',style: TextStyle(fontWeight: FontWeight.bold),),
+      //       centerTitle: true,
+      //       backgroundColor: appBarColor,
+      //   ),
+      appBar: CustomAppBar(title: 'Terms and Conditions', backgroundColor: appBarColor, titleColor: appColorblack),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25),
           child: SingleChildScrollView(

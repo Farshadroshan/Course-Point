@@ -5,6 +5,7 @@ import 'package:coursepoint/DataBase/Model/courses_model.dart';
 import 'package:coursepoint/database/model/user_login_model.dart';
 import 'package:coursepoint/helpers/video_controller.dart';
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:coursepoint/widget/full_screen_video.dart';
 import 'package:coursepoint/widget/user_sub_courses.dart';
 import 'package:flutter/foundation.dart';
@@ -112,12 +113,13 @@ void _goToFullScreen() {
 
     return Scaffold(
       // backgroundColor: const Color(0xFF191919),
-      appBar: AppBar(
-        backgroundColor: appBarColor,
-        title:  Text('Details', style: TextStyle(color: appColorblack, fontWeight: FontWeight.bold),),
-        centerTitle: true,
-        // iconTheme: const IconThemeData(color: Colors.grey),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: appBarColor,
+      //   title:  Text('Details', style: TextStyle(color: appColorblack, fontWeight: FontWeight.bold),),
+      //   centerTitle: true,
+      //   // iconTheme: const IconThemeData(color: Colors.grey),
+      // ),
+      appBar: CustomAppBar(title: 'Details', backgroundColor: appBarColor, titleColor: appColorblack),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

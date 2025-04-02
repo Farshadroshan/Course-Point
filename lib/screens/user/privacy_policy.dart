@@ -1,4 +1,5 @@
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class PrivacyPolicyPage extends StatelessWidget {
@@ -8,11 +9,12 @@ class PrivacyPolicyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  
     Scaffold(
-      appBar: AppBar(
-            title: Text('Privacy Policy',style: TextStyle(fontWeight: FontWeight.bold),),
-            centerTitle: true,
-            backgroundColor: appBarColor,
-        ),
+      // appBar: AppBar(
+      //       title: Text('Privacy Policy',style: TextStyle(fontWeight: FontWeight.bold),),
+      //       centerTitle: true,
+      //       backgroundColor: appBarColor,
+      //   ),
+      appBar: CustomAppBar(title: 'Privacy Policy', backgroundColor: appBarColor, titleColor: appColorblack),
         body:const SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
           child: Column(

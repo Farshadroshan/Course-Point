@@ -7,6 +7,7 @@ import 'package:coursepoint/Screens/admin/add_courses/admin_add_playlist.dart';
 import 'package:coursepoint/Screens/admin/admin_screens/admin_notes.dart';
 import 'package:coursepoint/screens/admin/update/update_subcourse_details.dart';
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 // import 'package:coursepoint/screens/admin/admin_add_playlist.dart';
 // import 'package:coursepoint/screens/admin/admin_notes.dart';
 import 'package:flutter/material.dart';
@@ -20,13 +21,15 @@ class AdminCoursePlayListScreen extends StatelessWidget {
     fechingPlayListDetails();
     return Scaffold(
       
-      appBar: AppBar(
-        // iconTheme: const IconThemeData(color: Colors.grey),
-        backgroundColor: appBarColor,
-        title: Text('Playlist', style: TextStyle(color: appColorblack, fontWeight: FontWeight.bold),),
-        centerTitle: true,
+      // appBar: AppBar(
+      //   // iconTheme: const IconThemeData(color: Colors.grey),
+      //   backgroundColor: appBarColor,
+      //   title: Text('Playlist', style: TextStyle(color: appColorblack, fontWeight: FontWeight.bold),),
+      //   centerTitle: true,
         
-      ),
+      // ),
+            appBar: CustomAppBar(title: 'Playlist', backgroundColor: appBarColor, titleColor: appColorblack),
+
       body: Padding(padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

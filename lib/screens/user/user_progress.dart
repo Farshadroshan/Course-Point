@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:coursepoint/DataBase/Model/courses_model.dart';
 import 'package:coursepoint/database/model/progress_model.dart';
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -35,12 +36,13 @@ class _UserprogressScreenState extends State<UserprogressScreen> {
      
 
     return Scaffold(
-      appBar:  AppBar(
-        backgroundColor:  appBarColor,
+      // appBar:  AppBar(
+      //   backgroundColor:  appBarColor,
        
-        title: Text("Course Progress", style: TextStyle(color: appColorblack, fontWeight: FontWeight.w600)),
-        centerTitle: true,
-      ),
+      //   title: Text("Course Progress", style: TextStyle(color: appColorblack, fontWeight: FontWeight.w600)),
+      //   centerTitle: true,
+      // ),
+      appBar: CustomAppBar(title: 'Course Progress', backgroundColor: appBarColor, titleColor: appColorblack),
       body: 
       
       ValueListenableBuilder(

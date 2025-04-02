@@ -9,6 +9,7 @@ import 'package:coursepoint/Screens/user/user_course_details.dart';
 import 'package:coursepoint/database/functions/favorites_functions.dart';
 import 'package:coursepoint/database/model/user_login_model.dart';
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -87,12 +88,13 @@ class _EnrolledcourseScreenState extends State<EnrolledcourseScreen> {
 
     return Scaffold(
       // backgroundColor: const Color(0xFF191919),
-      appBar: AppBar(
-        backgroundColor:  appBarColor,
+      // appBar: AppBar(
+      //   backgroundColor:  appBarColor,
        
-        title: Text("Enrolled Courses", style: TextStyle(color: appColorblack, fontWeight: FontWeight.w600)),
-        centerTitle: true,
-      ),
+      //   title: Text("Enrolled Courses", style: TextStyle(color: appColorblack, fontWeight: FontWeight.w600)),
+      //   centerTitle: true,
+      // ),
+      appBar: CustomAppBar(title: 'Enrolled Course', backgroundColor: appBarColor, titleColor: appColorblack),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ValueListenableBuilder(

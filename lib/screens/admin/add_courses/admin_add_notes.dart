@@ -3,6 +3,7 @@ import 'package:coursepoint/DataBase/Functions/course_add_functions.dart';
 import 'package:coursepoint/DataBase/Model/note_model.dart';
 import 'package:coursepoint/DataBase/Model/playlist_model.dart';
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class AdminaddnotesScreen extends StatefulWidget {
@@ -66,15 +67,17 @@ class _AdminaddnotesScreenState extends State<AdminaddnotesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: appBarColor,
-        centerTitle: true,
-        title: Text(
-          'Add Notes',
-          style: TextStyle(
-              color: appColorblack, fontWeight: FontWeight.bold, fontSize: 25),
-        ),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: appBarColor,
+      //   centerTitle: true,
+      //   title: Text(
+      //     'Add Notes',
+      //     style: TextStyle(
+      //         color: appColorblack, fontWeight: FontWeight.bold, fontSize: 25),
+      //   ),
+      // ),
+            appBar: CustomAppBar(title: 'Add Notes', backgroundColor: appBarColor, titleColor: appColorblack),
+
       body: SafeArea(
         child: SingleChildScrollView(
           child: Center(

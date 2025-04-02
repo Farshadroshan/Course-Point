@@ -11,6 +11,7 @@ import 'package:coursepoint/helpers/video_controller.dart';
 // import 'package:coursepoint/Screens/admin/admin_add_notes.dart';
 import 'package:coursepoint/widget/add_delete_update_button.dart';
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:coursepoint/widget/full_screen_video.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -137,15 +138,16 @@ void _goToFullScreen() {
     final MediaQueryData mediaQuery = MediaQuery.of(context); 
 
     return Scaffold(
-      appBar: AppBar(
-        title:  Text(
-          "Notes",
-          style: TextStyle(color: appColorblack),
-        ),
-        centerTitle: true,
-        backgroundColor: appBarColor,
+      // appBar: AppBar(
+      //   title:  Text(
+      //     "Notes",
+      //     style: TextStyle(color: appColorblack),
+      //   ),
+      //   centerTitle: true,
+      //   backgroundColor: appBarColor,
         
-      ),
+      // ),
+      appBar: CustomAppBar(title: 'Notes', backgroundColor: appBarColor, titleColor: appColorblack),
       body: Column(
           children: [
             // course indroduction video

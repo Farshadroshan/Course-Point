@@ -2,6 +2,7 @@ import 'package:coursepoint/screens/user/about.dart';
 import 'package:coursepoint/screens/user/privacy_policy.dart';
 import 'package:coursepoint/screens/user/terms_and_conditions.dart';
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:coursepoint/widget/menuItems.dart';
 import 'package:flutter/material.dart';
 
@@ -12,11 +13,12 @@ class UsersettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final MediaQueryData mediaQuery = MediaQuery.of(context); 
     return Scaffold(
-        appBar: AppBar(
-            title: Text('Settings',style: TextStyle(fontWeight: FontWeight.bold),),
-            centerTitle: true,
-            backgroundColor: appBarColor,
-        ),
+        // appBar: AppBar(
+        //     title: Text('Settings',style: TextStyle(fontWeight: FontWeight.bold),),
+        //     centerTitle: true,
+        //     backgroundColor: appBarColor,
+        // ),
+        appBar: CustomAppBar(title: 'Settings', backgroundColor: appBarColor, titleColor: appColorblack),
         body: SingleChildScrollView(
           child: Center(
             child: Padding(padding: EdgeInsets.all(40.0),

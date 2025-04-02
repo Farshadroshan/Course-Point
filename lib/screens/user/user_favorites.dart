@@ -8,6 +8,7 @@ import 'package:coursepoint/DataBase/Model/playlist_model.dart';
 import 'package:coursepoint/database/model/user_login_model.dart';
 import 'package:coursepoint/screens/user/user_course_notes.dart';
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -67,16 +68,17 @@ Future<void> fetchUserFavoritePlayList() async {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: const Color(0xFF191919),
-      appBar: AppBar(
-        title:  Text(
-          'Favorites',
-           style: TextStyle(color: appColorblack, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-        // iconTheme: const IconThemeData(color: Colors.grey),
-        backgroundColor:  appBarColor,
+      // appBar: AppBar(
+      //   title:  Text(
+      //     'Favorites',
+      //      style: TextStyle(color: appColorblack, fontWeight: FontWeight.bold),
+      //   ),
+      //   centerTitle: true,
+      //   // iconTheme: const IconThemeData(color: Colors.grey),
+      //   backgroundColor:  appBarColor,
         
-      ),
+      // ),
+      appBar: CustomAppBar(title: 'Favorites', backgroundColor: appBarColor, titleColor: appColorblack),
       body: Padding(
         padding: const EdgeInsets.all(30),
         child: Column(

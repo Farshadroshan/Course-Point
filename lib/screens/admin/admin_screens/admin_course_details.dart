@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:coursepoint/DataBase/Functions/database_functions.dart';
 import 'package:coursepoint/DataBase/Functions/delete_function.dart';
@@ -105,14 +106,16 @@ void _goToFullScreen() {
     final MediaQueryData mediaQuery = MediaQuery.of(context); 
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: appBarColor,
-        title: Text(
-          'Details',
-          style: TextStyle(color: appColorblack, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: appBarColor,
+      //   title: Text(
+      //     'Details',
+      //     style: TextStyle(color: appColorblack, fontWeight: FontWeight.bold),
+      //   ),
+      //   centerTitle: true,
+      // ),
+            appBar: CustomAppBar(title: 'Details', backgroundColor: appBarColor, titleColor: appColorblack),
+
       body: Column(
         children: [
           // Main content area (scrollable)

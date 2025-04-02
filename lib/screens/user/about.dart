@@ -1,5 +1,6 @@
 
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
@@ -9,11 +10,12 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  
     Scaffold(
-      appBar: AppBar(
-            title: Text('About',style: TextStyle(fontWeight: FontWeight.bold),),
-            centerTitle: true,
-            backgroundColor: appBarColor,
-        ),
+      // appBar: AppBar(
+      //       title: Text('About',style: TextStyle(fontWeight: FontWeight.bold),),
+      //       centerTitle: true,
+      //       backgroundColor: appBarColor,
+      //   ),
+      appBar: CustomAppBar(title: 'About', backgroundColor: appBarColor, titleColor: appColorblack),
       body: const SingleChildScrollView(
           child: Padding(
             padding:  EdgeInsets.all(0),

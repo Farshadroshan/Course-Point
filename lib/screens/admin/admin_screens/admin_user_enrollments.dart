@@ -1,5 +1,6 @@
 
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
@@ -35,11 +36,12 @@ class _AdminEnrollmentsScreenState extends State<AdminEnrollmentsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("User Enrollment Details", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25)),
-        backgroundColor: appBarColor,
-        centerTitle: true,
-      ),
+      // appBar: AppBar(
+      //   title: Text("User Enrollment Details", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25)),
+      //   backgroundColor: appBarColor,
+      //   centerTitle: true,
+      // ),
+      appBar: CustomAppBar(title: 'User Enrollment Details', backgroundColor: appBarColor, titleColor: appColorblack),
       body: Column(
         children: [
           Padding(

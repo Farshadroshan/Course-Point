@@ -463,6 +463,7 @@ import 'dart:typed_data';
 import 'package:coursepoint/DataBase/Functions/course_add_functions.dart';
 import 'package:coursepoint/DataBase/Model/courses_model.dart';
 import 'package:coursepoint/widget/apppcolor.dart';
+import 'package:coursepoint/widget/custom_app_bar.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -501,14 +502,15 @@ class _AdminaddcourseScreenState extends State<AdminaddcourseScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: appBarColor,
-        title: const Text(
-          'Add New Course',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-        ),
-        centerTitle: true,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: appBarColor,
+      //   title: const Text(
+      //     'Add New Course',
+      //     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+      //   ),
+      //   centerTitle: true,
+      // ),
+      appBar: CustomAppBar(title: 'Add New Course', backgroundColor: appBarColor, titleColor: appColorblack),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
