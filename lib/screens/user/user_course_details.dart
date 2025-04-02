@@ -243,7 +243,7 @@ void _goToFullScreen() {
                    Text(
                     'Lessons',
                     style: TextStyle(
-                      color: appColorblack,
+                      color:  appColorblack,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
