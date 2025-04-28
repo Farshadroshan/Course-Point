@@ -6,8 +6,9 @@ import 'package:coursepoint/database/model/user_login_model.dart';
 import 'package:coursepoint/helpers/video_controller.dart';
 import 'package:coursepoint/widget/apppcolor.dart';
 import 'package:coursepoint/widget/custom_app_bar.dart';
-import 'package:coursepoint/widget/full_screen_video.dart';
+// import 'package:coursepoint/widget/full_screen_video.dart';
 import 'package:coursepoint/widget/user_sub_courses.dart';
+import 'package:coursepoint/widget/video_player_widget.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -27,7 +28,7 @@ class _UsercoursedetailsScreenState extends State<UsercoursedetailsScreen> {
   bool _isMuted = false;
   bool _isPlaying = false;
   // Define the skip duration in seconds
-  final int _skipDuration = 10;
+  // final int _skipDuration = 10;
 
   // @override
   // void initState() {
@@ -124,99 +125,101 @@ void _goToFullScreen() {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 10,top: 10, right: 10),
-            child: Container(
-              width: double.infinity,
-              height: mediaQuery.size.height*0.24,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  _controller.value.isInitialized
-                  ? ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: AspectRatio(
-                              aspectRatio: _controller.value.aspectRatio,
-                              child: Stack(
-                                children: [
-                                  VideoPlayer(_controller),
-                                  // Left side clickable area
-                                  Positioned.fill(
-                                    child: Row(
-                                      children: [
-                                        // Left half for backward skip
-                                        Expanded(
-                                          child: GestureDetector(
-                                            onDoubleTap: _skipBackward,
-                                            child: Container(
-                                              color: Colors.transparent,
-                                            ),
-                                          ),
-                                        ),
-                                        // Right half for forward skip
-                                        Expanded(
-                                          child: GestureDetector(
-                                            onDoubleTap: _skipForward,
-                                            child: Container(
-                                              color: Colors.transparent,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                  : const Center( child: CircularProgressIndicator(),),
-                  Positioned(
-                      bottom: 10,
-                      left: 10,
-                      right: 10,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconButton(
-                            icon: Icon(
-                              _isMuted ? Icons.volume_off : Icons.volume_up,
-                              color: Colors.white,
-                            ),
-                            onPressed: _toggleMute,
-                          ),
-                          IconButton(
-                            icon: Icon(
-                              _isPlaying ? Icons.pause : Icons.play_arrow,
-                              color: Colors.white,
-                            ),
-                            onPressed: _togglePlayPause,
-                          ),
-                          Expanded(
-                            child: VideoProgressIndicator(
-                              _controller,
-                              allowScrubbing: true,
-                              colors: const VideoProgressColors(
-                                playedColor: Colors.teal,
-                                bufferedColor: Colors.grey,
-                                backgroundColor: Colors.white,
-                              ),
-                            ),
-                          ),
-                          IconButton(
-                            icon: const Icon(Icons.fullscreen, color: Colors.white),
-                            onPressed: _goToFullScreen,
-                          ),
-                        ],
-                      ),
-                    ),
-                ],
-              ),
-            ),
-          ),
+
+            VideoPlayerWidget(controller: _controller, isMuted: _isMuted, isPlaying: _isPlaying, toggleMute: _toggleMute, togglePlayPause: _togglePlayPause, skipForward: _skipForward, skipBackward: _skipBackward, goToFullScreen: _goToFullScreen),
+          // Padding(
+          //   padding: const EdgeInsets.only(left: 10,top: 10, right: 10),
+          //   child: Container(
+          //     width: double.infinity,
+          //     height: mediaQuery.size.height*0.24,
+          //     decoration: BoxDecoration(
+          //       color: Colors.black,
+          //       borderRadius: BorderRadius.circular(10),
+          //     ),
+          //     child: Stack(
+          //       alignment: Alignment.center,
+          //       children: [
+          //         _controller.value.isInitialized
+          //         ? ClipRRect(
+          //                   borderRadius: BorderRadius.circular(10),
+          //                   child: AspectRatio(
+          //                     aspectRatio: _controller.value.aspectRatio,
+          //                     child: Stack(
+          //                       children: [
+          //                         VideoPlayer(_controller),
+          //                         // Left side clickable area
+          //                         Positioned.fill(
+          //                           child: Row(
+          //                             children: [
+          //                               // Left half for backward skip
+          //                               Expanded(
+          //                                 child: GestureDetector(
+          //                                   onDoubleTap: _skipBackward,
+          //                                   child: Container(
+          //                                     color: Colors.transparent,
+          //                                   ),
+          //                                 ),
+          //                               ),
+          //                               // Right half for forward skip
+          //                               Expanded(
+          //                                 child: GestureDetector(
+          //                                   onDoubleTap: _skipForward,
+          //                                   child: Container(
+          //                                     color: Colors.transparent,
+          //                                   ),
+          //                                 ),
+          //                               ),
+          //                             ],
+          //                           ),
+          //                         ),
+          //                       ],
+          //                     ),
+          //                   ),
+          //                 )
+          //         : const Center( child: CircularProgressIndicator(),),
+          //         Positioned(
+          //             bottom: 10,
+          //             left: 10,
+          //             right: 10,
+          //             child: Row(
+          //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //               children: [
+          //                 IconButton(
+          //                   icon: Icon(
+          //                     _isMuted ? Icons.volume_off : Icons.volume_up,
+          //                     color: Colors.white,
+          //                   ),
+          //                   onPressed: _toggleMute,
+          //                 ),
+          //                 IconButton(
+          //                   icon: Icon(
+          //                     _isPlaying ? Icons.pause : Icons.play_arrow,
+          //                     color: Colors.white,
+          //                   ),
+          //                   onPressed: _togglePlayPause,
+          //                 ),
+          //                 Expanded(
+          //                   child: VideoProgressIndicator(
+          //                     _controller,
+          //                     allowScrubbing: true,
+          //                     colors: const VideoProgressColors(
+          //                       playedColor: Colors.teal,
+          //                       bufferedColor: Colors.grey,
+          //                       backgroundColor: Colors.white,
+          //                     ),
+          //                   ),
+          //                 ),
+          //                 IconButton(
+          //                   icon: const Icon(Icons.fullscreen, color: Colors.white),
+          //                   onPressed: _goToFullScreen,
+          //                 ),
+          //               ],
+          //             ),
+          //           ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
           
             // Course title
             Padding(
@@ -253,7 +256,7 @@ void _goToFullScreen() {
                 ],
               ),
             ),
-            UserSubCourses(widget: widget, mediaQuery: mediaQuery),
+            UserSubCourses(widget: widget , mediaQuery: mediaQuery),
           ],
         ),
       ),

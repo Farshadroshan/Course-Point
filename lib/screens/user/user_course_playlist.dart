@@ -1,4 +1,4 @@
-import 'dart:developer';
+// import 'dart:developer';
 
 import 'package:coursepoint/DataBase/Functions/database_functions.dart';
 import 'package:coursepoint/DataBase/Model/playlist_model.dart';
@@ -138,7 +138,7 @@ class _UsercourseplaylistScreenState extends State<UsercourseplaylistScreen> {
               Navigator.pop(context); // Close the dialog
               onComplete(widget.userData.id!, widget.courseId, widget.subcourse.id!, widget.totalSubCourses);
             },
-            child: Text("Confirm"),
+            child: Text("Conform"),
           ),
         ],
       );
