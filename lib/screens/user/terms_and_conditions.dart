@@ -10,11 +10,7 @@ class TermsAndConditionsPage extends StatelessWidget {
  Widget build(BuildContext context) {
     return  
     Scaffold(
-      // appBar: AppBar(
-      //       title: Text('Terms and Conditions',style: TextStyle(fontWeight: FontWeight.bold),),
-      //       centerTitle: true,
-      //       backgroundColor: appBarColor,
-      //   ),
+      
       appBar: CustomAppBar(title: 'Terms and Conditions', backgroundColor: appBarColor, titleColor: appColorblack),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25),

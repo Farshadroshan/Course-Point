@@ -13,11 +13,7 @@ class UsersettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final MediaQueryData mediaQuery = MediaQuery.of(context); 
     return Scaffold(
-        // appBar: AppBar(
-        //     title: Text('Settings',style: TextStyle(fontWeight: FontWeight.bold),),
-        //     centerTitle: true,
-        //     backgroundColor: appBarColor,
-        // ),
+
         appBar: CustomAppBar(title: 'Settings', backgroundColor: appBarColor, titleColor: appColorblack),
         body: SingleChildScrollView(
           child: Center(

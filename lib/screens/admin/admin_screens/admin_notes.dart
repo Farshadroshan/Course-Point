@@ -102,151 +102,19 @@ void _goToFullScreen() {
   VideoControlsHelper.goToFullScreen(context, _controller);
 }
 
-  // void _skipForward() {
-  //   final Duration currentPosition = _controller.value.position;
-  //   final Duration newPosition = currentPosition + Duration(seconds: _skipDuration);
-    
-  //   // Make sure we don't skip past the end of the video
-  //   if (newPosition <= _controller.value.duration) {
-  //     _controller.seekTo(newPosition);
-  //   } else {
-  //     _controller.seekTo(_controller.value.duration);
-  //   }
-  // }
-
-  // void _skipBackward() {
-  //   final Duration currentPosition = _controller.value.position;
-  //   final Duration newPosition = currentPosition - Duration(seconds: _skipDuration);
-    
-  //   // Make sure we don't skip before the beginning of the video
-  //   if (newPosition >= Duration.zero) {
-  //     _controller.seekTo(newPosition);
-  //   } else {
-  //     _controller.seekTo(Duration.zero);
-  //   }
-  // }
-
-  // void _goToFullScreen() {
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(
-  //       builder: (context) => FullScreenVideoScreen(controller: _controller),
-  //     ),
-  //   );
-  // }
 
   @override
   Widget build(BuildContext context) {
     final MediaQueryData mediaQuery = MediaQuery.of(context); 
 
     return Scaffold(
-      // appBar: AppBar(
-      //   title:  Text(
-      //     "Notes",
-      //     style: TextStyle(color: appColorblack),
-      //   ),
-      //   centerTitle: true,
-      //   backgroundColor: appBarColor,
-        
-      // ),
+     
       appBar: CustomAppBar(title: 'Notes', backgroundColor: appBarColor, titleColor: appColorblack),
       body: Column(
           children: [
             // course indroduction video
             VideoPlayerWidget(controller: _controller, isMuted: _isMuted, isPlaying: _isPlaying, toggleMute: _toggleMute, togglePlayPause: _togglePlayPause, skipForward: _skipForward, skipBackward: _skipBackward, goToFullScreen: _goToFullScreen),
-          //   Padding(
-          //   padding: const EdgeInsets.only(left: 10,top: 10, right: 10),
-          //   child: Container(
-          //     width: double.infinity,
-          //     height: mediaQuery.size.height * 0.24,
-          //     decoration: BoxDecoration(
-          //       color: Colors.black,
-          //       borderRadius: BorderRadius.circular(10),
-          //     ),
-          //     child: Stack(
-          //       alignment: Alignment.center,
-          //       children: [
-          //         _controller.value.isInitialized
-          //             ? ClipRRect(
-          //                 borderRadius: BorderRadius.circular(10),
-          //                 child: AspectRatio(
-          //                   aspectRatio: _controller.value.aspectRatio,
-          //                   child: Stack(
-          //                     children: [
-          //                       VideoPlayer(_controller),
-          //                       // Left side clickable area
-          //                       Positioned.fill(
-          //                         child: Row(
-          //                           children: [
-          //                             // Left half for backward skip
-          //                             Expanded(
-          //                               child: GestureDetector(
-          //                                 onDoubleTap: _skipBackward,
-          //                                 child: Container(
-          //                                   color: Colors.transparent,
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                             // Right half for forward skip
-          //                             Expanded(
-          //                               child: GestureDetector(
-          //                                 onDoubleTap: _skipForward,
-          //                                 child: Container(
-          //                                   color: Colors.transparent,
-          //                                 ),
-          //                               ),
-          //                             ),
-          //                           ],
-          //                         ),
-          //                       ),
-          //                     ],
-          //                   ),
-          //                 ),
-          //               )
-          //             : const Center(child: CircularProgressIndicator()),
-          //         Positioned(
-          //           bottom: 10,
-          //           left: 10,
-          //           right: 10,
-          //           child: Row(
-          //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //             children: [
-          //               IconButton(
-          //                 icon: Icon(
-          //                   _isMuted ? Icons.volume_off : Icons.volume_up,
-          //                   color: Colors.white,
-          //                 ),
-          //                 onPressed: _toggleMute,
-          //               ),
-          //               IconButton(
-          //                 icon: Icon(
-          //                   _isPlaying ? Icons.pause : Icons.play_arrow,
-          //                   color: Colors.white,
-          //                 ),
-          //                 onPressed: _togglePlayPause,
-          //               ),
-          //               Expanded(
-          //                 child: VideoProgressIndicator(
-          //                   _controller,
-          //                   allowScrubbing: true,
-          //                   colors: const VideoProgressColors(
-          //                     playedColor: Colors.teal,
-          //                     bufferedColor: Colors.grey,
-          //                     backgroundColor: Colors.white,
-          //                   ),
-          //                 ),
-          //               ),
-          //               IconButton(
-          //                 icon: const Icon(Icons.fullscreen, color: Colors.white),
-          //                 onPressed: _goToFullScreen,
-          //               ),
-          //             ],
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
+          
           
             const SizedBox(
               height: 5,
@@ -324,71 +192,4 @@ void _goToFullScreen() {
     );
   }
 }
-
-// class AdminNotes extends StatelessWidget {
-//   const AdminNotes({
-//     super.key,
-//     required this.widget,
-//   });
-
-//   final AdminNotesScreen widget;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return ValueListenableBuilder(
-//       valueListenable: noteListNotifier,
-//       builder: (BuildContext ctx, List<NoteModel>notecourseList, Widget? child){
-//         final filterdList = notecourseList.where((note){
-//           if(note.id != null){
-//             log('playlistID: ${note.playlistId}');
-//             log('noteID: ${note.id}');
-//             return note.playlistId == widget.playlistDetails.id;
-//           }
-//           return false;
-//         }).toList();
-//         return Expanded(
-//           child: 
-//           notecourseList.isEmpty
-//         ? Center(child: Text('Playlist Not Available'),)
-//         :ListView.builder(
-//             itemCount: filterdList.length,
-//               itemBuilder: (context, index) {
-//                 final noteDetails = filterdList[index];
-//                 return Padding(
-//                   padding:  const EdgeInsets.fromLTRB(8, 0, 8, 0),
-//                   child: ExpansionTile(
-//                     title:  Text(
-//                     noteDetails.notequestion,
-//                       style:  TextStyle(
-//                         fontSize: 20,
-//                         color: appColorblack,
-//                         fontWeight: FontWeight.w600,
-//                       ),
-//                     ),
-//                     trailing:  Icon(Icons.arrow_drop_down,color: appColorblack,),
-                    
-//                     tilePadding:  const EdgeInsets.all(0),
-//                     children: [
-//                       ListBody(
-//                         children: [
-//                           Text.rich(
-//                             TextSpan(
-//                                text: noteDetails.noteAnswer,
-//                               style: TextStyle(
-//                                   fontSize: 18, color: appColorblack,fontWeight: FontWeight.w400),
-//                             ),
-//                           ),
-//                         ],
-//                       ),
-//                     ],
-//                   ),
-//                 );
-//               },
-//               ),
-//         );
-//       }
-      
-//     );
-//   }
-// }
 

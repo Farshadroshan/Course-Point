@@ -67,15 +67,7 @@ class _AdminaddnotesScreenState extends State<AdminaddnotesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: appBarColor,
-      //   centerTitle: true,
-      //   title: Text(
-      //     'Add Notes',
-      //     style: TextStyle(
-      //         color: appColorblack, fontWeight: FontWeight.bold, fontSize: 25),
-      //   ),
-      // ),
+      
             appBar: CustomAppBar(title: 'Add Notes', backgroundColor: appBarColor, titleColor: appColorblack),
 
       body: SafeArea(

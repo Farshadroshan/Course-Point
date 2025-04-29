@@ -102,9 +102,7 @@ class _UpdateSubcourseDetailsState extends State<UpdateSubcourseDetails> {
 
 
   void submitSubcourse(){
-    // if(subcourseTitle.text.isEmpty || image == null ){
-
-    // }
+    
     if(!_formKey.currentState!.validate() || image == null ){
     return ;
     }

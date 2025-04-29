@@ -60,17 +60,7 @@ class _AdminAccountScreenState extends State<AdminAccountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color(0xFF191919),
-      // appBar: AppBar(
-      //   // iconTheme: const IconThemeData(color: Colors.grey),
-      //   backgroundColor:  appBarColor,
-      //   centerTitle: true,
-      //   title: const Text(
-      //     'Account',
-      //     style: TextStyle(
-      //         color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
-      //   ),
-      // ),
+      
             appBar: CustomAppBar(title: 'Account', backgroundColor: appBarColor, titleColor: appColorblack),
 
       body: Padding(

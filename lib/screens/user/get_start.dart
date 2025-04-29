@@ -21,7 +21,6 @@ class GetstartScreen extends StatelessWidget {
                      padding: const EdgeInsets.all(20.0),
                      child: Container(
                      
-                    //  decoration: BoxDecoration(color: Colors.teal),
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
                         child: Column(

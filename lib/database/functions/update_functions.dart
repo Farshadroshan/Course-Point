@@ -8,12 +8,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 Future<void> updateCourse(CoursesModel courseDetails) async {
     final courseDb = await Hive.openBox<CoursesModel>('course_db');
-    // int courseID = int.parse(CourseId.trim());
-      // final course = courseDb.get(CourseId);
-
-    // if(course == null){
-    //   print('Error: Course not found at index $course');
-    // }
+    
     log(courseDetails.id??'id isnull');
     log(courseDetails.coursetitle);
     await courseDb.put(courseDetails.id, courseDetails);

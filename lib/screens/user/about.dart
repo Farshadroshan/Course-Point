@@ -10,11 +10,7 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  
     Scaffold(
-      // appBar: AppBar(
-      //       title: Text('About',style: TextStyle(fontWeight: FontWeight.bold),),
-      //       centerTitle: true,
-      //       backgroundColor: appBarColor,
-      //   ),
+      
       appBar: CustomAppBar(title: 'About', backgroundColor: appBarColor, titleColor: appColorblack),
       body: const SingleChildScrollView(
           child: Padding(

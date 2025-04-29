@@ -36,12 +36,7 @@ class _UserprogressScreenState extends State<UserprogressScreen> {
      
 
     return Scaffold(
-      // appBar:  AppBar(
-      //   backgroundColor:  appBarColor,
-       
-      //   title: Text("Course Progress", style: TextStyle(color: appColorblack, fontWeight: FontWeight.w600)),
-      //   centerTitle: true,
-      // ),
+      
       appBar: CustomAppBar(title: 'Course Progress', backgroundColor: appBarColor, titleColor: appColorblack),
       body: 
       
@@ -138,13 +133,6 @@ class _UserprogressScreenState extends State<UserprogressScreen> {
       ),
     );
   }
-
-  // top to this is correct 
- 
-//////////////////////////////////////////////////////////////////
-
-// checking for the name and image 
-
 
 
 }

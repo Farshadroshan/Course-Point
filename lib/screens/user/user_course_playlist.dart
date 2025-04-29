@@ -25,33 +25,7 @@ class _UsercourseplaylistScreenState extends State<UsercourseplaylistScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color(0xFF191919),
-
-      // appBar: AppBar(
-      //   // iconTheme: const IconThemeData(color: Colors.grey),
-      //   backgroundColor: appBarColor,
-      //   title: Text('Playlist' ,style: TextStyle(color: appColorblack, fontWeight: FontWeight.bold),),
-      //   // centerTitle: true,
-      //   centerTitle: true,
-      //   actions: [
-      //     Padding(
-      //       padding: const EdgeInsets.all(8.0),
-      //       // child: ElevatedButton(
-      //       //   style: ElevatedButton.styleFrom(
-      //       //     // minimumSize: Size(30, 30),
-      //       //     // maximumSize: Size(1, 3)
-      //       //   ),
-      //       //   onPressed: () {
-      //       //    _showCompletionDialog(context);
-      //       //   },
-      //       //   child: Text("Complete"),
-              
-      //       // ),
-      //       child: TextButton(onPressed: ()=> _showCompletionDialog(context), child: Text('Complete'))
-      //     ),
-      //   ],
-        
-      // ),
+      
       appBar: CustomAppBar(title: 'Playlists', backgroundColor: appBarColor, titleColor: appColorblack,showCompleteButton: true,onCompletePressed: () => _showCompletionDialog(context),),
       body: Padding(padding: const EdgeInsets.all(20),
       child: Column(

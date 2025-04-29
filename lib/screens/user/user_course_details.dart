@@ -27,20 +27,7 @@ class _UsercoursedetailsScreenState extends State<UsercoursedetailsScreen> {
  late VideoPlayerController _controller;
   bool _isMuted = false;
   bool _isPlaying = false;
-  // Define the skip duration in seconds
-  // final int _skipDuration = 10;
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   // Initialize the video player controller
-  //   // _controller = VideoPlayerController.file(File(widget.courseDetails.indroductionvideo,))
-  //   //   ..initialize().then((_) {
-  //   //     setState(() {}); // Rebuild to show the initialized video
-  //   //     // _controller.play();
-  //   //     // _hideButtonAfterDelay();
-  //   //   });
-  // }
+  
 
   @override
   
@@ -127,99 +114,6 @@ void _goToFullScreen() {
           children: [
 
             VideoPlayerWidget(controller: _controller, isMuted: _isMuted, isPlaying: _isPlaying, toggleMute: _toggleMute, togglePlayPause: _togglePlayPause, skipForward: _skipForward, skipBackward: _skipBackward, goToFullScreen: _goToFullScreen),
-          // Padding(
-          //   padding: const EdgeInsets.only(left: 10,top: 10, right: 10),
-          //   child: Container(
-          //     width: double.infinity,
-          //     height: mediaQuery.size.height*0.24,
-          //     decoration: BoxDecoration(
-          //       color: Colors.black,
-          //       borderRadius: BorderRadius.circular(10),
-          //     ),
-          //     child: Stack(
-          //       alignment: Alignment.center,
-          //       children: [
-          //         _controller.value.isInitialized
-          //         ? ClipRRect(
-          //                   borderRadius: BorderRadius.circular(10),
-          //                   child: AspectRatio(
-          //                     aspectRatio: _controller.value.aspectRatio,
-          //                     child: Stack(
-          //                       children: [
-          //                         VideoPlayer(_controller),
-          //                         // Left side clickable area
-          //                         Positioned.fill(
-          //                           child: Row(
-          //                             children: [
-          //                               // Left half for backward skip
-          //                               Expanded(
-          //                                 child: GestureDetector(
-          //                                   onDoubleTap: _skipBackward,
-          //                                   child: Container(
-          //                                     color: Colors.transparent,
-          //                                   ),
-          //                                 ),
-          //                               ),
-          //                               // Right half for forward skip
-          //                               Expanded(
-          //                                 child: GestureDetector(
-          //                                   onDoubleTap: _skipForward,
-          //                                   child: Container(
-          //                                     color: Colors.transparent,
-          //                                   ),
-          //                                 ),
-          //                               ),
-          //                             ],
-          //                           ),
-          //                         ),
-          //                       ],
-          //                     ),
-          //                   ),
-          //                 )
-          //         : const Center( child: CircularProgressIndicator(),),
-          //         Positioned(
-          //             bottom: 10,
-          //             left: 10,
-          //             right: 10,
-          //             child: Row(
-          //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //               children: [
-          //                 IconButton(
-          //                   icon: Icon(
-          //                     _isMuted ? Icons.volume_off : Icons.volume_up,
-          //                     color: Colors.white,
-          //                   ),
-          //                   onPressed: _toggleMute,
-          //                 ),
-          //                 IconButton(
-          //                   icon: Icon(
-          //                     _isPlaying ? Icons.pause : Icons.play_arrow,
-          //                     color: Colors.white,
-          //                   ),
-          //                   onPressed: _togglePlayPause,
-          //                 ),
-          //                 Expanded(
-          //                   child: VideoProgressIndicator(
-          //                     _controller,
-          //                     allowScrubbing: true,
-          //                     colors: const VideoProgressColors(
-          //                       playedColor: Colors.teal,
-          //                       bufferedColor: Colors.grey,
-          //                       backgroundColor: Colors.white,
-          //                     ),
-          //                   ),
-          //                 ),
-          //                 IconButton(
-          //                   icon: const Icon(Icons.fullscreen, color: Colors.white),
-          //                   onPressed: _goToFullScreen,
-          //                 ),
-          //               ],
-          //             ),
-          //           ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
           
             // Course title
             Padding(

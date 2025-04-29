@@ -21,13 +21,6 @@ class AdminCoursePlayListScreen extends StatelessWidget {
     fechingPlayListDetails();
     return Scaffold(
       
-      // appBar: AppBar(
-      //   // iconTheme: const IconThemeData(color: Colors.grey),
-      //   backgroundColor: appBarColor,
-      //   title: Text('Playlist', style: TextStyle(color: appColorblack, fontWeight: FontWeight.bold),),
-      //   centerTitle: true,
-        
-      // ),
             appBar: CustomAppBar(title: 'Playlist', backgroundColor: appBarColor, titleColor: appColorblack),
 
       body: Padding(padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),

@@ -44,56 +44,12 @@ class _EnrolledcourseScreenState extends State<EnrolledcourseScreen> {
     enrolledUserNotifier.notifyListeners(); 
   }
 
-  
-  
-  
-
-
-//   Future<void> deleteEnrolledCourse(String courseId, String userId) async {
-//   var box = Hive.box('userEnrollments');
-
-//   List<String> enrolledCourseIds = List<String>.from(box.get(userId, defaultValue: []));
-//   log('Before deletion: $enrolledCourseIds'); 
-
-//   enrolledCourseIds.remove(courseId);
-
-//   print('After deletion: $enrolledCourseIds'); 
-
-//   box.put(userId, enrolledCourseIds);
-//   // removeFavoritePlaylist(userId, playlistId)
-
-//   var box2 = Hive.box('userEnrollments');
-  
-//   List<String> enrolledCourseIds2 = List<String>.from(box2.get(widget.userData.id, defaultValue: []));
-  
-//   // Fetch full course details based on IDs
-//   List<CoursesModel> enrolledCourses = enrolledCourseIds2.map((courseId) {
-//     return coursesListNotifier.value.firstWhere((course) => course.id == courseId, 
-//       orElse: () => CoursesModel(id: '', coursetitle: '',Description: '',image: '',indroductionvideo: ''));
-//   }).toList();
-  
-  
-//   enrolledUserNotifier.value = enrolledCourses;
-//   enrolledUserNotifier.notifyListeners(); 
-//   log('Course deleted: $courseId');
-// }
-
-
-  
-
-
   @override
   Widget build(BuildContext context) {
     final MediaQueryData mediaQuery = MediaQuery.of(context); 
 
     return Scaffold(
-      // backgroundColor: const Color(0xFF191919),
-      // appBar: AppBar(
-      //   backgroundColor:  appBarColor,
-       
-      //   title: Text("Enrolled Courses", style: TextStyle(color: appColorblack, fontWeight: FontWeight.w600)),
-      //   centerTitle: true,
-      // ),
+      
       appBar: CustomAppBar(title: 'Enrolled Course', backgroundColor: appBarColor, titleColor: appColorblack),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -109,7 +65,6 @@ class _EnrolledcourseScreenState extends State<EnrolledcourseScreen> {
 
                       return GestureDetector(
                         onTap: () {
-                          // Navigate to course details screen
                           Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => UsercoursedetailsScreen(courseDetails: courseData, userData: widget.userData)));
                         },
                         child: Padding(
@@ -128,9 +83,7 @@ class _EnrolledcourseScreenState extends State<EnrolledcourseScreen> {
                                     decoration: BoxDecoration( borderRadius: BorderRadius.circular(15),
                                     image:DecorationImage(
                                       image: FileImage(File(courseData.image)),
-                                      // image: kIsWeb
-                                      // ? NetworkImage(courseData.image)
-                                      // : FileImage(File(courseData.image)),
+                                      
                                     fit: BoxFit.cover) ),
                                   ),
                                 ),
@@ -139,8 +92,6 @@ class _EnrolledcourseScreenState extends State<EnrolledcourseScreen> {
                                 const Spacer(),
                                 IconButton(
                                   onPressed: () {
-                                    // Handle delete course logic
-                                    // deleteEnrolledCourse(courseData.id!, widget.userData.id!);
                                     showDialog(context: context, builder: (context) {
                                       return AlertDialog(
                                         title: Text('Delete'),
@@ -173,7 +124,3 @@ class _EnrolledcourseScreenState extends State<EnrolledcourseScreen> {
     );
   }
 }
-
-
-
-

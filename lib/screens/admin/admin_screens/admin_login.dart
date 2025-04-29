@@ -123,11 +123,7 @@ class _AdminloginScreenState extends State<AdminloginScreen> {
                       } else {
                         print('Data is Empty');
                       }
-                      // checkLogin(context);
-
-      //                 Navigator.of(context).pushAndRemoveUntil(
-      //   MaterialPageRoute(builder: (ctx) => AdminhomeScreen()),(route)=>false
-      // );
+                 
                     },
                     child: Center(
                       child: Container(
@@ -181,9 +177,6 @@ class _AdminloginScreenState extends State<AdminloginScreen> {
           )));
     }
 
-    // Navigator.of(context).pushAndRemoveUntil(
-    //     MaterialPageRoute(builder: (ctx) => AdminhomeScreen()),(route)=>false
-    //   );
     
   }
 }

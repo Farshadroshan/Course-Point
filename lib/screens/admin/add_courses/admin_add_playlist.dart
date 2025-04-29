@@ -43,15 +43,7 @@ class _AdminAddPlaylistScreenState extends State<AdminAddPlaylistScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: appBarColor,
-      //   centerTitle: true,
-      //   title: Text(
-      //     'Add Playlist',
-      //     style: TextStyle(
-      //         color: appColorblack, fontWeight: FontWeight.bold, fontSize: 22),
-      //   ),
-      // ),
+      
             appBar: CustomAppBar(title: 'Add Playlist', backgroundColor: appBarColor, titleColor: appColorblack),
 
       body: Padding(
@@ -61,28 +53,7 @@ class _AdminAddPlaylistScreenState extends State<AdminAddPlaylistScreen> {
           children: [
             Text("Add Playlist Video", style: TextStyle(color: appColorblack, fontSize: 18,fontWeight: FontWeight.bold)),
             const SizedBox(height: 10),
-            // GestureDetector(
-            //   onTap: pickgalleryVideo,
-            //   child: Container(
-            //     width: double.infinity,
-            //     height: 150,
-            //     decoration: BoxDecoration(
-            //       color: Colors.blueGrey.shade100,
-            //       borderRadius: BorderRadius.circular(12),
-            //     ),
-            //     child: videoController != null && videoController!.value.isInitialized
-            //         ? ClipRRect(
-            //             borderRadius: BorderRadius.circular(10),
-            //             child: AspectRatio(
-            //               aspectRatio: videoController!.value.aspectRatio,
-            //               child: VideoPlayer(videoController!),
-            //             ),
-            //           )
-            //         : const Center(
-            //             child: Icon(Icons.videocam, size: 50, color: Colors.grey),
-            //           ),
-            //   ),
-            // ),
+            
             GestureDetector(
       onTap: () => pickgalleryVideo(),
       child: Container(
@@ -174,20 +145,7 @@ class _AdminAddPlaylistScreenState extends State<AdminAddPlaylistScreen> {
     );
   }
 
-  // Future<void> pickgalleryVideo() async {
-  //   final pickedvideoFile = await videoPicker.pickVideo(source: ImageSource.gallery);
-  //   if (pickedvideoFile != null) {
-  //     if (videoController != null) {
-  //       await videoController!.dispose();
-  //     }
-  //     videoController = VideoPlayerController.file(File(pickedvideoFile.path))
-  //       ..initialize().then((_) {
-  //         setState(() {});
-  //         videoController!.play();
-  //       });
-  //     video = pickedvideoFile.path;
-  //   }
-  // }
+  
 
   Future<void> pickgalleryVideo() async {
     final pickedFile = await videoPicker.pickVideo(source: ImageSource.gallery);
@@ -265,29 +223,5 @@ class _AdminAddPlaylistScreenState extends State<AdminAddPlaylistScreen> {
     Navigator.of(context).pop();
   }
 
-  // void submitCourse(BuildContext context) {
-  //   if (!_formKey.currentState!.validate() || (imagePath == null && imageBase64 == null) || (videoPath == null && videoFile == null)) {
-  //     ScaffoldMessenger.of(context).showSnackBar(
-  //       const SnackBar(content: Text('Please fill all fields and add media')),
-  //     );
-  //     return;
-  //   }
-  //   // Use a special prefix to identify base64 images for web
-  // final imageData = kIsWeb 
-  //     ? "BASE64:$imageBase64" 
-  //     : imagePath!;
-      
-  // final videoData = kIsWeb 
-  //     ? "BASE64:$videoBase64" 
-  //     : videoPath!;
-  //   final course = CoursesModel(
-  //     image: imageData,
-  //     coursetitle: addCourseTitle.text,
-  //     Description: courseDescription.text,
-  //     indroductionvideo: videoData,
-  //   );
-    
-  //   addCourse(course);
-  //   Navigator.pop(context);
-  // }
+
 }

@@ -155,24 +155,12 @@ class _UpdateCourseDetailsState extends State<UpdateCourseDetails> {
                   TextButton(onPressed: (){
                     Navigator.pop(context);
                   }, 
-                  //style: TextButton.styleFrom(backgroundColor: Colors.grey),
                   child: Text('Cancel')),
                   SizedBox(width: 10,),
                   TextButton(
                     onPressed: () {
-                      // if (titleController.text.isEmpty ||
-                      //     discriptionController.text.isEmpty ||
-                      //     image == null ||
-                      //     video == null) {
-                      //   ScaffoldMessenger.of(context).showSnackBar(
-                      //     const SnackBar(
-                      //       content: Text('All fields are required!'),
-                      //     ),
-                      //   );
-                      //   return;
-                      // }
+                      
                       if(!_formKey.currentState!.validate() || image == null || video == null){
-                        //  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('All fields are required! ')));
                          return;
                       }
                   
@@ -193,9 +181,7 @@ class _UpdateCourseDetailsState extends State<UpdateCourseDetails> {
                         
                       Navigator.of(context).pop();
                       Navigator.of(context).pop();
-                      // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>AdminhomeScreen()));
                     },
-                  //  style: TextButton.styleFrom(backgroundColor: Colors.grey),
                     child: const Text(
                       'Submit',
                      
