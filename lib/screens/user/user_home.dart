@@ -69,7 +69,7 @@ class _UserhomeScreenState extends State<UserhomeScreen> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-               ChatBotBox(widget: widget),
+               ChatBotBox(widget: widget ),
             Row(
               children: [
                 Padding(
